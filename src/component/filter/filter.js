@@ -7,7 +7,6 @@ const Filter = (props) => {
     const years = [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020];
     const condition = ['True', 'False'];
     let params = {};
-    debugger
     // params = this.props.match ? this.props.match.params : {};
     params = queryString.parse(props.location.search);
 
@@ -18,6 +17,7 @@ const Filter = (props) => {
         for (let key in params) {
             url = `${url}${key}=${params[key]}&`;
         }
+        url = url.slice(0, url.length - 1);
         history.push(`/?${url}`);
     }
 
@@ -29,7 +29,6 @@ const Filter = (props) => {
             </div>
             <div className="p-3 btn-container">
                 {years.map((item) => {
-                    debugger
                     return <div key="item" className="column-div">
                         <span className={params.launch_year == item ? 'btn btn-active' : 'btn'}
                             onClick={e => navigateTo(`launch_year`, item)}>{item}</span>
