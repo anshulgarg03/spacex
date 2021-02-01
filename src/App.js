@@ -8,22 +8,24 @@ function App() {
   return (
     <div>
       <Header />
-      <div className="main-panel">
-        <BrowserRouter>
-          <div className="filter-column">
-            {/* <Filter /> */}
-            <Route path="/"
-              render={(props) => <Filter {...props} />} />
-          </div>
-          <div className="main-panel side-column">
-            {/* <Switch> */}
-            <Route path="/"
-              render={(props) => <Content {...props} />} />
-            {/* <Content /> */}
-            {/* </Switch> */}
-          </div>
-        </BrowserRouter>
+      <div className="container">
+        <div className="main-panel">
+          <BrowserRouter>
+            <div className="filter-column">
+              {/* <Filter /> */}
+              <Route path="/"
+                render={(props) => <Filter {...props} />} />
+            </div>
+            <div className="main-panel side-column">
+              {/* <Switch> */}
+              <Route path="/"
+                render={(props) => <Content {...props} />} />
+              {/* <Content /> */}
+              {/* </Switch> */}
+            </div>
+          </BrowserRouter>
 
+        </div>
       </div>
       <div className="header" style={{ textAlign: 'center' }}><span>Developed by: Anshul Kumar</span></div>
     </div>

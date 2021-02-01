@@ -18,11 +18,18 @@
   padding: 1rem !important;
 }
 
+.container {
+  /* max-width: 1440px; */
+  display: flex;
+  justify-content: center;
+}
+
 .main-panel {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  max-width: 1440px;
 }
 
 .column {
