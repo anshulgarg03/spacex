@@ -12,7 +12,12 @@ const Filter = (props) => {
 
     const history = useHistory();
     let navigateTo = (param, value) => {
-        params[param] = value;
+        debugger
+        if (params[param] === value.toString()) {
+            delete params[param];
+        } else {
+            params[param] = value;
+        }
         let url = '';
         for (let key in params) {
             url = `${url}${key}=${params[key]}&`;

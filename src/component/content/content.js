@@ -9,7 +9,7 @@ class Content extends Component {
     }
 
     convertBooleanToString = (value) => {
-        return value ? 'True' : 'False';
+        return value ? 'True' : value === false ? 'False' : '';
     }
 
     loadData = () => {
@@ -33,8 +33,10 @@ class Content extends Component {
     //     loadData();
     // }
 
-    componentDidUpdate() {
-        this.loadData();
+    componentDidUpdate(prevProps) {
+        if (this.props.location.search !== prevProps.location.search) {
+            this.loadData();
+        }
     }
 
     componentDidMount() {
