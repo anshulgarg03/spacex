@@ -9,7 +9,7 @@ class Content extends Component {
     }
 
     convertBooleanToString = (value) => {
-        return value ? 'True' : value === false ? 'False' : '';
+        return value ? 'True' : value === false ? 'False' : 'Null';
     }
 
     loadData = () => {
